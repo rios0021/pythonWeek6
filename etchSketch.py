@@ -75,6 +75,7 @@ def etchSketch():
     from gfxhat import lcd, backlight
     from random import randint
     import os
+    from rios0021Library import clearBacklight
     print("Etch a Sketch running, use arrow keys to draw, 's' to restart or 'q' to exit...")
     exit = False
     x = 64
