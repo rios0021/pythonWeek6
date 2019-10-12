@@ -337,10 +337,16 @@ def etchSketch():
 # Output: none
 def displayObject(obj,x,y):
     from gfxhat import lcd
-    if(x < 0):
-        x = 128+x
-    if(y < 0):
-        y = 64+y
+    # While loop to translate any entered number into a existing space in the gfxhat display
+    while(x < 0 or y < 0 or x > 127 or y > 63):
+        if(x < 0):
+            x = 128+x
+        if(y < 0):
+            y = 64+y
+        if(x > 127):
+            x = x-128
+        if(y > 63):
+            y = y-63
     navX = x
     navY = y
     for aux in obj:
